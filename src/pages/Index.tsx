@@ -4,6 +4,7 @@ import { ForecastForm } from "@/components/forecaster/ForecastForm";
 import { ModelUpload } from "@/components/forecaster/ModelUpload";
 import { useModel } from "@/hooks/use-model";
 import { Card, CardContent } from "@/components/ui/card";
+import { SoccerForecaster } from "@/components/forecaster/SoccerForecaster";
 
 const Index = () => {
   const { model, saveModel, resetModel, features } = useModel();
@@ -61,6 +62,16 @@ const Index = () => {
 
         <section id="model" className="scroll-mt-24">
           <ModelUpload current={model} onSave={saveModel} onReset={resetModel} />
+        </section>
+
+        <section id="soccer" className="scroll-mt-24">
+          <Card className="elevate">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-2">Soccer forecaster (3-way)</h2>
+              <p className="text-muted-foreground mb-4">Use o modelo V5 H2H para probabilidades de Casa/Empate/Fora.</p>
+              <SoccerForecaster />
+            </CardContent>
+          </Card>
         </section>
 
         <section aria-labelledby="how-it-works">
